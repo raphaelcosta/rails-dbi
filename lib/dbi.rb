@@ -37,7 +37,7 @@ module DBI; end
 
 begin
     require "rubygems"
-    gem "deprecated", "= 2.0.1"
+    #gem "deprecated", "= 2.0.1"
 rescue LoadError
 end
 
@@ -45,7 +45,7 @@ end
 # NOTE see the end of the file for requires that live in the DBI namespace.
 #
 
-require "deprecated"
+#require "deprecated"
 require "dbi/row"
 require "dbi/utils"
 require "dbi/sql"
@@ -69,24 +69,24 @@ class Class
     end
 end
 
-Deprecate.set_action(
-    proc do |call|
-        klass, meth = call.split(/[#.]/)
-        klass = klass.split(/::/).inject(Module) { |a,x| a.const_get(x) }
-
-        case klass
-        when DBI::Date, DBI::Time, DBI::Timestamp
-            warn "DBI::Date/Time/Timestamp are deprecated and will eventually be removed."
-        end
-
-        if klass.inherits_from?(DBI::ColumnInfo)
-            warn "ColumnInfo methods that do not match a component are deprecated and will eventually be removed"
-        end
-
-        warn "You may change the result of calling deprecated code via Deprecate.set_action; Trace follows:"
-        warn caller[2..-1].join("\n")
-    end
-)
+#Deprecate.set_action(
+#    proc do |call|
+#        klass, meth = call.split(/[#.]/)
+#        klass = klass.split(/::/).inject(Module) { |a,x| a.const_get(x) }
+#
+#        case klass
+#        when DBI::Date, DBI::Time, DBI::Timestamp
+#            warn "DBI::Date/Time/Timestamp are deprecated and will eventually be removed."
+#        end
+#
+#        if klass.inherits_from?(DBI::ColumnInfo)
+#            warn "ColumnInfo methods that do not match a component are deprecated and will eventually be removed"
+#        end
+#
+#        warn "You may change the result of calling deprecated code via Deprecate.set_action; Trace follows:"
+#        warn caller[2..-1].join("\n")
+#    end
+#)
 
 #++
 module DBI

@@ -2,11 +2,11 @@ require 'delegate'
 
 begin
     require 'rubygems'
-    gem 'deprecated', "= 2.0.1"
+    #gem 'deprecated', "= 2.0.1"
 rescue LoadError => e
 end
 
-require 'deprecated'
+#require 'deprecated'
 
 module DBI
     # This represents metadata for columns within a given table, such as the
@@ -79,29 +79,29 @@ module DBI
         end
 
         # Aliases - XXX soon to be deprecated
-        def self.deprecated_alias(target, source) # :nodoc:
-            define_method(target) { |*args| method_missing(source, *args) }
-            deprecate target 
-        end
-
-        deprecated_alias :is_nullable?, :nullable
-        deprecated_alias :can_be_null?, :nullable
-
-        deprecated_alias :is_indexed?, :indexed
-
-        deprecated_alias :is_primary?, :primary
-
-        deprecated_alias :is_unique, :unique
-
-        deprecated_alias :size, :precision
-        deprecated_alias :size=, :precision=
-        deprecated_alias :length, :precision
-        deprecated_alias :length=, :precision=
-
-        deprecated_alias :decimal_digits, :scale
-        deprecated_alias :decimal_digits=, :scale=
-
-        deprecated_alias :default_value, :default
-        deprecated_alias :default_value=, :default=
+        #def self.deprecated_alias(target, source) # :nodoc:
+        #    define_method(target) { |*args| method_missing(source, *args) }
+        #    deprecate target 
+        #end
+        #
+        #deprecated_alias :is_nullable?, :nullable
+        #deprecated_alias :can_be_null?, :nullable
+        #
+        #deprecated_alias :is_indexed?, :indexed
+        #
+        #deprecated_alias :is_primary?, :primary
+        #
+        #deprecated_alias :is_unique, :unique
+        #
+        #deprecated_alias :size, :precision
+        #deprecated_alias :size=, :precision=
+        #deprecated_alias :length, :precision
+        #deprecated_alias :length=, :precision=
+        #
+        #deprecated_alias :decimal_digits, :scale
+        #deprecated_alias :decimal_digits=, :scale=
+        #
+        #deprecated_alias :default_value, :default
+        #deprecated_alias :default_value=, :default=
     end
 end

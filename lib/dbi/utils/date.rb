@@ -54,6 +54,6 @@ module DBI
 
         public
 
-        deprecate :initialize, :public
+        #deprecate :initialize, :public
     end
 end

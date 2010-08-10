@@ -12,7 +12,7 @@ $LOAD_PATH.unshift("lib")
 require 'dbi'
 require 'test/unit'
 
-Deprecate.set_action(proc { })
+#Deprecate.set_action(proc { })
 
 class TC_DBI_Time < Test::Unit::TestCase
    def setup

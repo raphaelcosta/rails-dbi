@@ -36,7 +36,7 @@ module DBI
 
       public
       
-      deprecate :initialize, :public
+      #deprecate :initialize, :public
 
       # Returns true if +timestamp+ has a year, month, day, hour, minute,
       # second and fraction equal to the comparing object.

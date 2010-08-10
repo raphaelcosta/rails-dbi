@@ -25,7 +25,7 @@ module DBI
 
       public
       
-      deprecate :initialize, :public
+      #deprecate :initialize, :public
 
       alias :min :minute
       alias :min= :minute=
