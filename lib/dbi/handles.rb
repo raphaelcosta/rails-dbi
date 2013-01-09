@@ -9,7 +9,7 @@ module DBI
     class Handle
         attr_reader :trace_mode, :trace_output
         attr_reader :handle 
-        attr :convert_types, true
+        attr_accessor :convert_types
 
         def initialize(handle, convert_types=true)
             @handle = handle
