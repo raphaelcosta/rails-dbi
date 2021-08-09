@@ -209,7 +209,7 @@ module DBI
         end
 
 
-        if RUBY_VERSION =~ /^1\.9/
+        if RUBY_VERSION =~ /^1\.9/ || RUBY_VERSION =~ /^2/
             def __getobj__
                 @arr
             end
